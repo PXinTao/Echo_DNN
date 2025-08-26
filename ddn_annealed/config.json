@@ -1,0 +1,21 @@
+{
+  "weights": {
+    "quality": 1.0,
+    "diversity": 0.3,
+    "minority": 0.5
+  },
+  "diversity": {
+    "mode": "centroid",
+    "pool_size": 8,
+    "sample_m": 16
+  },
+  "temp_policy": {
+    "init_T": 1.2,
+    "min_T": 0.02,
+    "max_T": 2.0,
+    "global_decay": 0.0001,
+    "first_layer_boost": 1.4,
+    "last_layer_factor": 0.3
+  },
+  "sa_steps": 0
+}

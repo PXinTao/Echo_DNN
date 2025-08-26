@@ -1,0 +1,100 @@
+{
+  "kwargs": {
+    "data": "/home/tao/pxt/discrete_distribution_networks/datasets/ultrasound-256x256.zip",
+    "outdir": "./cardiac_enhanced_runs",
+    "enable_annealed": true,
+    "quality_weight": 1.0,
+    "diversity_weight": 0.3,
+    "minority_weight": 0.7,
+    "batch": 32,
+    "duration": 50.0,
+    "cond": false,
+    "condition": null,
+    "arch": "ddn",
+    "precond": "edm",
+    "batch_gpu": null,
+    "max_blockn": 8,
+    "max_outputk": 8,
+    "learn_res": true,
+    "chain_dropout": 0.05,
+    "lr": 0.001,
+    "fp16": true,
+    "init_temp": 1.5,
+    "min_temp": 0.01,
+    "max_temp": 3.0,
+    "sa_steps": 0,
+    "desc": null,
+    "tick": 50,
+    "snap": 50,
+    "seed": null,
+    "transfer": null,
+    "resume": null,
+    "dry_run": false
+  },
+  "annealed_selector_enabled": true,
+  "dataset_kwargs": {
+    "class_name": "training.dataset.ImageFolderDataset",
+    "path": "/home/tao/pxt/discrete_distribution_networks/datasets/ultrasound-256x256.zip",
+    "use_labels": false,
+    "xflip": false,
+    "cache": true,
+    "resolution": 256,
+    "max_size": 4000
+  },
+  "data_loader_kwargs": {
+    "pin_memory": true,
+    "num_workers": 1,
+    "prefetch_factor": 2
+  },
+  "network_kwargs": {
+    "class_name": "training.enhanced_networks.EnhancedPHDDN",
+    "dropout": 0,
+    "use_fp16": true,
+    "enable_annealed_selector": true
+  },
+  "loss_kwargs": {
+    "class_name": "training.enhanced_loss.EnhancedDDNLoss"
+  },
+  "optimizer_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "annealed_selector_cfg": {
+    "enable_annealed_selector": true,
+    "weights": {
+      "quality": 1.0,
+      "diversity": 0.3,
+      "minority": 0.7
+    },
+    "diversity": {
+      "mode": "centroid",
+      "pool_size": 8,
+      "sample_m": 16
+    },
+    "temp_policy": {
+      "init_T": 1.5,
+      "min_T": 0.01,
+      "max_T": 3.0,
+      "global_decay": 0.0001,
+      "first_layer_boost": 1.6,
+      "last_layer_factor": 0.2
+    },
+    "sa_steps": 0
+  },
+  "total_kimg": 50000,
+  "ema_halflife_kimg": 500,
+  "batch_size": 32,
+  "batch_gpu": null,
+  "loss_scaling": 1,
+  "cudnn_benchmark": true,
+  "kimg_per_tick": 50,
+  "snapshot_ticks": 50,
+  "state_dump_ticks": 500,
+  "seed": 305742106,
+  "run_dir": "./cardiac_enhanced_runs/00004-ultrasound-256x256-enhanced-annealed"
+}

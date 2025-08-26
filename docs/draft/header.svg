@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="700" height="210" viewBox="0 0 700 210"
+     role="img" aria-labelledby="title">
+  <title id="title">Discrete Distribution Networks preview</title>
+
+  <!-- 左侧 PNG，点击跳转到原始大图 -->
+  <a xlink:href="https://discrete-distribution-networks.github.io/img/ddn-intro.png" target="_blank">
+    <image xlink:href="https://discrete-distribution-networks.github.io/img/ddn-intro.png"
+           href="https://discrete-distribution-networks.github.io/img/ddn-intro.png"
+           x="0" y="5" height="200" />
+  </a>
+
+  <!-- 右侧 GIF，点击跳转到项目主页 -->
+  <a xlink:href="https://discrete-distribution-networks.github.io/" target="_blank">
+    <image xlink:href="https://discrete-distribution-networks.github.io/img/frames_bin100_k2000_itern1800_batch40_framen96_2d-density-estimation-DDN.gif"
+           href="https://discrete-distribution-networks.github.io/img/frames_bin100_k2000_itern1800_batch40_framen96_2d-density-estimation-DDN.gif"
+           x="400" y="30" />
+  </a>
+</svg>
